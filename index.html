@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    Created by Ron Royston, https://rack.pub, © 2018 MIT License
+    Available online at https://github.com/rhroyston/html5
+        
+        ⚠ NO COMMENTS ABOVE DOCTYPE declaration.
+        
+        ⚠ Consider page viewing experience across device types, sometimes called Responsive Web Design, RWD.
+        
+        ⚐ Mozilla Developer Network HTML ELEMENT REFERENCE
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+            
+        ⚐ Validate HTML with The W3C Markup Validation Service
+            https://validator.w3.org/
+            
+        ⚐ Favicon image displays in browser tab
+            http://realfavicongenerator.net/
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile viewing enhancement -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- ⚠ Description should be roughly 155 characters, no double quotes, use keywords -->
+    <meta name="description" content="CSS Responsive Grid Layout. Simple. Clean. Golden." />
+    <!-- ⚠ Format as Primary Keyword - Secondary Keyword | Brand Name, keep under 55 characters -->
+    <title>Golden Grid - CSS Responsive Grid Layout. Simple. Clean. Golden.</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png">
+    
+    <style>
+        body {
+            width: 100%;
+            height:100%;
+            margin:0;
+            display: grid;
+            grid-template-columns: [column-line-1] minmax(128px, 256px) [column-line-2] auto [column-line-3] minmax(128px, 256px) [column-line-4];
+            grid-template-rows: [row-line-1] 128px [row-line-2] auto [row-line-3] auto [row-line-4] auto [row-line-5] 128px [row-line-6];
+        }
+        nav {
+            display: grid;
+        }
+        footer {
+            grid-column-start: column-line-1;
+            grid-column-end: column-line-4;
+            grid-row: row-line-5;
+        }
+        h1 , h3 , p , a{
+            margin:1em;
+        }
+        
+        @media screen and (max-width: 479px) {
+            header {
+                grid-column-start: column-line-1;
+                grid-column-end: column-line-4;
+            }
+            main {
+                grid-column-start: column-line-1;
+                grid-column-end: column-line-4;
+                grid-row: row-line-2;
+            }
+            aside {
+                grid-column-start: column-line-1;
+                grid-column-end: column-line-4;
+                grid-row: row-line-3;
+            }
+            nav {
+                grid-column-start: column-line-1;
+                grid-column-end: column-line-4;
+                grid-row: row-line-4;
+            }
+        }
+        
+        @media screen and (min-width: 480px) and (max-width: 639px) {
+            nav {
+                grid-column: column-line-1;
+                grid-row: row-line-2;
+            }
+            aside {
+                grid-column: column-line-1;
+                grid-row-start: row-line-3;
+                grid-row-end: row-line-5;
+            }
+            main {
+                grid-column: column-line-2 / column-line-4;
+                grid-row-start: row-line-1;
+                grid-row-end: row-line-5;
+            }
+        }
+        
+        @media screen and (min-width: 640px) {
+            header {
+                grid-column-start: column-line-1;
+                grid-column-end: column-line-4;
+            }
+            nav {
+                grid-column: column-line-1;
+                grid-row-start: row-line-2;
+                grid-row-end: row-line-5;
+            }
+            aside {
+                grid-column: column-line-3;
+                grid-row-start: row-line-2;
+                grid-row-end: row-line-5;
+            }
+            main {
+                grid-column: column-line-2;
+                grid-row-start: row-line-2;
+                grid-row-end: row-line-5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <main>
+        <section>
+            <p>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+        </section>
+        
+        <section>
+            <p>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+        </section>
+        
+        <section>
+            <p>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+        </section>
+        
+        <section>
+            <p>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+        </section>
+    </main>
+    <nav>
+        <h3>Navigation</h3>
+        <a href="#">Home</a>
+        <a href="#">Chapter 1</a>
+        <a href="#">Chapter 2</a>
+        <a href="#">Chapter 3</a>
+        <a href="#">Chapter 4</a>
+    </nav>
+    <aside>
+        <h3>Sidebar</h3>
+        <p>Aside Element. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </aside>
+    <footer>
+        <h3>Footer</h3>
+        <p>Footer Element. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </footer>
+    
+</body>
+
+</html>
+
